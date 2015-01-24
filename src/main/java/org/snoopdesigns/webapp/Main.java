@@ -2,6 +2,8 @@ package org.snoopdesigns.webapp;
 
 import java.io.IOException;
 import java.net.URL;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
@@ -72,6 +74,17 @@ public class Main extends HttpServlet {
         ServletContextHandler servletContext = new ServletContextHandler(ServletContextHandler.SESSIONS);
         servletContext.setContextPath("/api");
         servletContext.addServlet(new ServletHolder(new Main()), "/");
+        servletContext.addEventListener(new ServletContextListener() {
+            @Override
+            public void contextInitialized(ServletContextEvent servletContextEvent) {
+                System.out.println("Context initialized called!");
+            }
+
+            @Override
+            public void contextDestroyed(ServletContextEvent servletContextEvent) {
+                System.out.println("Context destroyed called!");
+            }
+        });
         servletContext.setServer(server);
 
         WebAppContext webAppContext = new WebAppContext();
