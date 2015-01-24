@@ -89,7 +89,7 @@
     </style>
 
     <head>
-        <title>Example</title>
+        <title>Snoopdesigns!</title>
     </head>
 
     <body>
