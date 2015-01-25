@@ -1,3 +1,8 @@
+window.onload = function() {
+    onclickabout();
+    setTimeout(function() {document.getElementById('about-block').style.transition = "All 1s ease";}, 2000);
+}
+
 function onclickcontacts() {
     document.getElementById('about-block').style.opacity = "0";
     document.getElementById('about-block').style.overflow = "hidden";

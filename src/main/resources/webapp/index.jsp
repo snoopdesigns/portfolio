@@ -112,10 +112,11 @@
             <a style="margin-left: 140;" class="hlink" onclick='onclickexample()'>Example</a>
         </div>
         <div class="my-block">
-            <div id="about-block" style="overflow: visible; display: block; opacity:1; -webkit-transition: All 1s ease;transition: All 1s ease;">
-                HELLO, MY NAME IS DMITRY<br/>
-                THIS SITE IS STILL UNDER CONSTRUCTION<br/><br/>
-                <a href="#"><img class="button" src="images/social/insta.png"></a>
+            <div id="about-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 4s ease;transition: All 4s ease;">
+                HELLO <br>
+                MY NAME IS DMITRY<br><br>
+                THIS SITE IS STILL UNDER CONSTRUCTION<br/><br>
+                <a href="#"><img class="button" src="images/social/facebook.png"></a>
                 <a href="#"><img class="button" src="images/social/google.png"></a>
                 <a href="#"><img class="button" src="images/social/linkedin.png"></a>
             </div>
