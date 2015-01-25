@@ -42,6 +42,14 @@
             color: white;
         }
 
+        .footer {
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:200;
+        }
+
         .my-block {
             text-align: center;
             font-family:my-font;
@@ -95,8 +103,8 @@
     <body>
         <div class="header">
             <a class="hlink" href="#">About</a>
-            <a style="padding-left: 70;" class="hlink" href="#">Contact</a>
-            <a style="padding-left: 70;" class="hlink" href="#">Example</a>
+            <a style="margin-left: 140;" class="hlink" href="#">Contact</a>
+            <a style="margin-left: 140;" class="hlink" href="#">Example</a>
         </div>
         <div class="my-block">
             HELLO, MY NAME IS DMITRY<br/>
@@ -104,6 +112,9 @@
             <a href="#"><img class="button" src="images/social/insta.png"></a>
             <a href="#"><img class="button" src="images/social/google.png"></a>
             <a href="#"><img class="button" src="images/social/linkedin.png"></a>
+        </div>
+        <div class="footer">
+            <img src="images/unnamed.png" style="width:180px;height:180px;position:absolute;left:45%;">
         </div>
     </body>
 </html>
