@@ -112,22 +112,23 @@
             <a style="margin-left: 140;" class="hlink" onclick='onclickexample()'>Example</a>
         </div>
         <div class="my-block">
-            <div id="about-block" style="overflow: visible; display: block; opacity:1; -webkit-transition: All 1s linear;transition: All 1s linear;">
+            <div id="about-block" style="overflow: visible; display: block; opacity:1; -webkit-transition: All 1s ease;transition: All 1s ease;">
                 HELLO, MY NAME IS DMITRY<br/>
                 THIS SITE IS STILL UNDER CONSTRUCTION<br/><br/>
                 <a href="#"><img class="button" src="images/social/insta.png"></a>
                 <a href="#"><img class="button" src="images/social/google.png"></a>
                 <a href="#"><img class="button" src="images/social/linkedin.png"></a>
             </div>
-            <div id="contact-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s linear;transition: All 1s linear;">
+            <div id="contact-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s ease;transition: All 1s ease;">
                 CONTACTS<br/>
             </div>
-            <div id="example-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s linear;transition: All 1s linear;">
+            <div id="example-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s ease;transition: All 1s ease;">
                 EXAMPLE<br/>
             </div>
         </div>
-        <div class="footer">
-            <img src="images/unnamed.png" style="width:180px;height:180px;position:absolute;left:45%;">
+        <div class="footer" style="font-size: 13; font-family: verdana; color:#c0c0c0;text-align: center;vertical-align: middle;">
+            <img src="images/unnamed.png" style="box-shadow: 0 0 20px #000; width:180; height: 180;display: block;margin:auto;">
+            <b>&copy; 2015 Dmitry Morozov</b>
         </div>
     </body>
 </html>
