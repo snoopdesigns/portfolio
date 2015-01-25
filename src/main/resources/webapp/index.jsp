@@ -1,4 +1,5 @@
 <html>
+    <script src="js/script.js"></script>
     <style type="text/css">
         @font-face {
             font-family:my-font;
@@ -94,6 +95,10 @@
             text-shadow: 0px 0px 10px #000;
             color: #f5f5f5;
         }
+
+        block-hidden {
+            display: none !important;
+        }
     </style>
 
     <head>
@@ -102,16 +107,24 @@
 
     <body>
         <div class="header">
-            <a class="hlink" href="#">About</a>
-            <a style="margin-left: 140;" class="hlink" href="#">Contact</a>
-            <a style="margin-left: 140;" class="hlink" href="#">Example</a>
+            <a class="hlink" onclick='onclickabout()'>About</a>
+            <a style="margin-left: 140;" class="hlink" onclick='onclickcontacts()'>Contact</a>
+            <a style="margin-left: 140;" class="hlink" onclick='onclickexample()'>Example</a>
         </div>
         <div class="my-block">
-            HELLO, MY NAME IS DMITRY<br/>
-            THIS SITE IS STILL UNDER CONSTRUCTION<br/><br/>
-            <a href="#"><img class="button" src="images/social/insta.png"></a>
-            <a href="#"><img class="button" src="images/social/google.png"></a>
-            <a href="#"><img class="button" src="images/social/linkedin.png"></a>
+            <div id="about-block" style="overflow: visible; display: block; opacity:1; -webkit-transition: All 1s linear;transition: All 1s linear;">
+                HELLO, MY NAME IS DMITRY<br/>
+                THIS SITE IS STILL UNDER CONSTRUCTION<br/><br/>
+                <a href="#"><img class="button" src="images/social/insta.png"></a>
+                <a href="#"><img class="button" src="images/social/google.png"></a>
+                <a href="#"><img class="button" src="images/social/linkedin.png"></a>
+            </div>
+            <div id="contact-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s linear;transition: All 1s linear;">
+                CONTACTS<br/>
+            </div>
+            <div id="example-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s linear;transition: All 1s linear;">
+                EXAMPLE<br/>
+            </div>
         </div>
         <div class="footer">
             <img src="images/unnamed.png" style="width:180px;height:180px;position:absolute;left:45%;">
