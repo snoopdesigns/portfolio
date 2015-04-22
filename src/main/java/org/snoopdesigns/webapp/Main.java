@@ -90,7 +90,7 @@ public class Main extends HttpServlet {
         WebAppContext webAppContext = new WebAppContext();
         webAppContext.setContextPath("/");
         webAppContext.setWar("src/main/resources/webapp");
-        webAppContext.setWelcomeFiles(new String[] {"index.jsp"});
+        webAppContext.setWelcomeFiles(new String[] {"index.html"});
 
         HandlerList handlers = new HandlerList();
         handlers.setHandlers(new Handler[] { servletContext, webAppContext, new DefaultHandler() });
