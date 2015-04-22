@@ -1,4 +1,8 @@
 <html>
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/prototype.lite.js"></script>
+    <script type="text/javascript" src="js/moo.fx.js"></script>
+    <script type="text/javascript" src="js/litebox-1.0.js"></script>
     <script type="text/javascript" src="js/Chart.min.js"></script>
     <script src="js/script.js"></script>
     <style type="text/css">
@@ -10,6 +14,11 @@
         @font-face {
             font-family:header-font;
             src: url(fonts/code-bold.otf);
+        }
+
+        @font-face {
+            font-family:font-symbols;
+            src: url(fonts/cool-stuff.ttf);
         }
 
         html {
@@ -49,7 +58,9 @@
             bottom:0;
             left:0;
             width:100%;
-            height:200;
+            background-color: rgba(10,10,10,0.7);
+            -webkit-filter: drop-shadow(0px 0px 15px #000) brightness(100%);
+            height:30;
         }
 
         .my-block {
@@ -60,11 +71,12 @@
             color: white;
             display: table-cell;
             vertical-align: middle;
-            padding-top: 50px;
+            padding-top: 70px;
             padding-left: 100px;
             padding-right: 100px;
-            padding-bottom: 170px;
+            padding-bottom: 70px;
             overflow: hidden;
+        height: 100%;
         }
 
         .thumbnails img {
@@ -158,6 +170,7 @@
         }
 
         #about-block::-webkit-scrollbar { width: 0 !important }
+        #example-block::-webkit-scrollbar { width: 0 !important }
 
         a:link {
         color: #CCCCCC;
@@ -191,8 +204,8 @@
     <body>
         <div class="header">
             <a class="hlink" onclick='onclickabout()'>About</a>
+            <a style="margin-left: 155;" class="hlink" onclick='onclickexample()'>Showcase</a>
             <a style="margin-left: 140;" class="hlink" onclick='onclickcontacts()'>Contacts</a>
-            <a style="margin-left: 140;" class="hlink" onclick='onclickexample()'>Example</a>
         </div>
         <div class="my-block">
             <div id="about-block"  onscroll="drawGraphs(this)" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 4s ease;transition: All 4s ease;">
@@ -205,7 +218,7 @@
                     </div>
                 </div>
                 <div>&nbsp;</div>
-                <br/><br/>
+                <br/>
 
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -221,7 +234,11 @@
                         <dt><p><b>School</b></p></dt>
                         <dd>- 344 Lyceum 2009 graduate</dd>
                         <dt><p><b>University</b></p></dt>
+                        <dd>- Saint-Petersburg Polytechnical University 2016 - Master of Computer Science</dd>
+                        <dd>- Saint-Petersburg Polytechnical University 2016 - Economical Education School</dd>
                         <dt><p><b>Post-graduate</b></p></dt>
+                        <dd>- Stanford Online Cources</dd>
+                        <dd>- Yandex Machine Learning Cources</dd>
                     </dl>
                 </div>
 
@@ -245,19 +262,22 @@
 
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-                <br/><br/>
+                <br/><br/><br/><br/>
 
                 <div style="padding-bottom: 20px;height:360px;">
                     <div style="height:150;width:31%;float:left;padding:5px;">
-                        <img src="images/logo.png"><br>
+                        <img id="first_img" src="images/logo.png" style="-webkit-transition: All 2s ease;opacity:0.0">
+                        <!--<div style="font-family:font-symbols;font-size: 100;color: rgb(A0,A0,A0);text-shadow: 0px 0px 4px #000;"><b>I</b></div>--><br/>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
                     <div style="height:150;width:31%;float:left;padding:5px;">
-                        <img src="images/logo.png"><br>
+                        <img id="second_img" src="images/logo.png" style="-webkit-transition: All 2s ease;opacity:0.0">
+                        <!--<div style="font-family:font-symbols;font-size: 100;color: rgb(A0,A0,A0);text-shadow: 0px 0px 4px #000;"><b>C</b></div>--><br/>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
                     <div style="height:150;width:31%;float:left;padding:5px;">
-                        <img src="images/logo.png"><br>
+                        <img id="third_img" src="images/logo.png" style="-webkit-transition: All 2s ease;opacity:0.0">
+                        <!--<div style="font-family:font-symbols;font-size: 100;color: rgb(A0,A0,A0);text-shadow: 0px 0px 4px #000;"><b>P</b></div>--><br/>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
                 </div>
@@ -269,6 +289,14 @@
                 <hr>
 
                 <br/>
+                <img src="images/logos/hp.png" width="150px" height="auto" style="padding-left: 30px;">
+                <img src="images/logos/motorola.png" width="150px" height="auto" style="padding-left: 30px;">
+                <img src="images/logos/intel.png" width="150px" height="auto" style="padding-left: 30px;">
+                <img src="images/logos/lenovo.gif" width="150px" height="auto" style="padding-left: 30px;">
+
+                <br><br><br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
             </div>
             <div id="contact-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s ease;transition: All 1s ease;">
@@ -276,42 +304,57 @@
                 <a href="#"><img class="button" src="images/social/facebook.png"></a>
                 <a href="#"><img class="button" src="images/social/google.png"></a>
                 <a href="#"><img class="button" src="images/social/linkedin.png"></a>
-            </div>
-            <div id="example-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s ease;transition: All 1s ease;">
-                <div id="gallery" style="padding-left:30px; padding-right:30px; padding-top:20px; padding-bottom:20px; border-radius: 25px;background-image: url('images/bg-pattern.png');background-repeat: repeat-y repeat-x;-webkit-filter: drop-shadow(0px 0px 15px #000);">
-                    <div class="thumbnails">
-                        <img onmouseover="change_preview_image('images/gallery/big1.png', 'WebSite 1', 'http://google.com/')" name="img1" src="images/gallery/small1.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big2.png', 'WebSite 2', 'http://google.com/')" name="img2" src="images/gallery/small2.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big3.png', 'WebSite 3', 'http://google.com/')" name="img3" src="images/gallery/small3.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big4.png', 'WebSite 4', 'http://google.com/')" name="img4" src="images/gallery/small4.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big5.png', 'WebSite 5', 'http://google.com/')" name="img5" src="images/gallery/small5.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big1.png', 'WebSite 6', 'http://google.com/')" name="img6" src="images/gallery/small1.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big2.png', 'WebSite 7', 'http://google.com/')" name="img7" src="images/gallery/small2.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big3.png', 'WebSite 8', 'http://google.com/')" name="img8" src="images/gallery/small3.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big4.png', 'WebSite 9', 'http://google.com/')" name="img9" src="images/gallery/small4.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big4.png', 'WebSite 10', 'http://google.com/')" name="img4" src="images/gallery/small4.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big5.png', 'WebSite 11', 'http://google.com/')" name="img5" src="images/gallery/small5.png" alt="" height="100" width="100"/>
-                        <img onmouseover="change_preview_image('images/gallery/big1.png', 'WebSite 12', 'http://google.com/')" name="img6" src="images/gallery/small1.png" alt="" height="100" width="100"/>
-                    </div>
-
-                    <br/>
-
-                    <div class="preview" align="center">
-                        <img id="preview" name="preview" src="images/gallery/transparent-bg.png" style="background: url('images/gallery/big3.png');" height="350" width="350"/>
-                    </div>
-                    <div id="preview_text"><a href="http://website.com/" target="_blank">Snoopdesigns portfolio v.1</a></div>
-
-                </div>
 
                 <br/>
+                Or leave a feedback:
+                <br/><br/><br/><br/><br/><br/>
+
+                <div style="padding-top: 10px; padding-bottom: 20px;height:300px;">
+                    <div style="height:250;width:43%;float:left;padding:25px;">
+                        <form action="URL to form script" method="POST">
+                            <input style="width: 100%;float: left;background-color: rgb(230,230,230);font-size: 20;border: none;box-shadow:none;text-indent:10px;line-height: 30px;" type="text" name="realname" placeholder="Name"><br><br>
+                            <input style="width: 100%;float: left;background-color: rgb(230,230,230);font-size: 20;border: none;box-shadow:none;text-indent:10px;line-height: 30px;" type="text" name="email" placeholder="Email"><br><br>
+                            <textarea style="width: 100%;float: left;background-color: rgb(230,230,230);font-size: 20;border: none;box-shadow:none;text-indent:7px;" name="comments" rows="5" placeholder="Message"></textarea><br><br>
+                            <input style="float: left;font-family: my-font;background-color: rgb(50,50,50);border:none;color: #ccc;padding: 8px 38px 12px 36px;margin: 0px;margin-top: 5px;" type="submit" value="Send">
+                        </form>
+                    </div>
+                    <div style="height:150;width:43%;float:left;padding:25px;">
+                        <b>Saint-Petersburg, Russia</b><br><br><br>
+                        I am located in Saint-Petersburg, but am looking for work places all over the world. Thanks!
+                    </div>
+                </div>
+            </div>
+
+            <div id="example-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s ease;transition: All 1s ease;">
+
+                <div style="padding-top: 10px; padding-bottom: 20px;height:300px;">
+                    <div style="height:150;width:48%;float:left;padding:5px;">
+                        <div style="font-family:font-symbols;font-size: 100;"><b>J</b></div><br/>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+                    <div style="height:150;width:48%;float:left;padding:5px;">
+                        <div style="font-family:font-symbols;font-size: 100;"><b>S</b></div><br/>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+                </div>
+
+                <div id="gallery" style="padding-left:30px; padding-right:30px;padding-bottom:20px; ">
+                    <div class="thumbnails">
+                        <a href="images/gallery/big1.png" rel="lightbox[example]" title="Horses"><img src="images/gallery/small1.png" width="100" height="100" alt="Image #1"/></a>
+                        <a href="images/gallery/big2.png" rel="lightbox[example]" title="Horses"><img src="images/gallery/small2.png" width="100" height="100" alt="Image #2"/></a>
+                        <a href="images/gallery/big3.png" rel="lightbox[example]" title="Horses"><img src="images/gallery/small3.png" width="100" height="100" alt="Image #3"/></a>
+                        <a href="images/gallery/big4.png" rel="lightbox[example]" title="Horses"><img src="images/gallery/small4.png" width="100" height="100" alt="Image #4"/></a>
+                        <a href="images/gallery/big5.png" rel="lightbox[example]" title="Horses"><img src="images/gallery/small5.png" width="100" height="100" alt="Image #5"/></a>
+                    </div>
+                </div>
+
                 <br/>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
             </div>
         </div>
-        <div class="footer" style="font-size: 13; font-family: verdana; color:#c0c0c0;text-align: center;vertical-align: middle;">
-            <img src="images/unnamed.png" style="box-shadow: 0 0 20px #000; width:180; height: 180;display: block;margin:auto;">
+        <div class="footer" style="font-size: 13; font-family: verdana; color:#c0c0c0;text-align: center;vertical-align: middle;padding-top:15px;">
             <b>&copy; 2015 Dmitry Morozov</b>
         </div>
     </body>
