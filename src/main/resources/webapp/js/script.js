@@ -4,10 +4,19 @@ window.onload = function() {
     initLightbox();
 }
 
-var prevHeight = 0;
+function isScrolledIntoView(el) {
+    var elemTop = el.getBoundingClientRect().top;
+    var elemBottom = el.getBoundingClientRect().bottom;
+
+    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    return isVisible;
+}
+
+var graphsActive = false;
+var imgActive = false;
 
 function check_scroll_action(div) {
-    if(div.scrollTop > 300 && prevHeight <= 300) {
+    if(isScrolledIntoView(document.getElementById('myChart1')) && graphsActive == false) {
         var graph1Data = [
             {
                 value: 90,
@@ -42,6 +51,7 @@ function check_scroll_action(div) {
         ];
 
         var options = {
+            showTooltips: false,
             segmentShowStroke : true,
             segmentStrokeColor : "#999999",
             segmentStrokeWidth : 2,
@@ -66,20 +76,27 @@ function check_scroll_action(div) {
         var myDoughnutChart1 = new Chart(document.getElementById("myChart1").getContext("2d")).Doughnut(graph1Data,options);
         var myDoughnutChart2 = new Chart(document.getElementById("myChart2").getContext("2d")).Doughnut(graph2Data,options);
         var myDoughnutChart3 = new Chart(document.getElementById("myChart3").getContext("2d")).Doughnut(graph3Data,options);
+
+        graphsActive = true;
     }
 
-    if(div.scrollTop > 700 && prevHeight <= 700) {
+    if(isScrolledIntoView(document.getElementById('first_img')) && imgActive == false) {
         document.getElementById('first_img').style.opacity = "1.0";
         setTimeout(function() {document.getElementById('second_img').style.opacity = "1.0";}, 200);
         setTimeout(function() {document.getElementById('third_img').style.opacity = "1.0";}, 400);
+        imgActive = true;
     }
 
-    if(div.scrollTop <200 && prevHeight >= 200) {
+    /*if(isScrolledIntoView(document.getElementById('myChart1')) == false && graphsActive == true) {
+        graphsActive = false;
+    }
+
+    if(isScrolledIntoView(document.getElementById('first_img')) == false && imgActive == true) {
         document.getElementById('first_img').style.opacity = "0.0";
         document.getElementById('second_img').style.opacity = "0.0";
         document.getElementById('third_img').style.opacity = "0.0";
-    }
-    prevHeight = div.scrollTop;
+        imgActive = false;
+    }*/
 }
 
 function onclickcontacts() {

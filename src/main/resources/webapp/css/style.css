@@ -13,6 +13,11 @@
             src: url(../fonts/cool-stuff.ttf);
         }
 
+        @font-face {
+            font-family:font-symbols-new;
+            src: url(../fonts/stmedia.otf);
+        }
+
         html {
             background: url(../images/bg.jpg) no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -112,7 +117,7 @@
         }
 
         .thumbnails img {
-            padding: 1px;
+            padding: 5px;
             margin: 0 2px 2px 0;
             -webkit-filter: drop-shadow(0px 0px 5px #000) brightness(100%);
             -webkit-transition: All 0.5s ease;
@@ -130,6 +135,7 @@
         .img-social-button {
             width:64px;
             height:64px;
+            padding: 10px;
             box-shadow: 0px 0px 4px #000;
             -webkit-transition: All 0.5s ease;
             -moz-transition: All 0.5s ease;
