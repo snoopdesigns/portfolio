@@ -1,201 +1,15 @@
 <html>
-    <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+
     <script type="text/javascript" src="js/prototype.lite.js"></script>
     <script type="text/javascript" src="js/moo.fx.js"></script>
     <script type="text/javascript" src="js/litebox-1.0.js"></script>
     <script type="text/javascript" src="js/Chart.min.js"></script>
+
     <script src="js/script.js"></script>
-    <style type="text/css">
-        @font-face {
-            font-family:my-font;
-            src: url(fonts/roboto-regular.ttf);
-        }
 
-        @font-face {
-            font-family:header-font;
-            src: url(fonts/code-bold.otf);
-        }
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
 
-        @font-face {
-            font-family:font-symbols;
-            src: url(fonts/cool-stuff.ttf);
-        }
-
-        html {
-            background: url(images/bg.jpg) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
-
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-        }
-
-        body {
-            display: table;
-        }
-
-        .header{
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:40;
-            text-align: center;
-            vertical-align: middle;
-            padding-top: 30;
-            text-shadow: 0px 0px 4px #000;
-            color: white;
-        }
-
-        .footer {
-            position:absolute;
-            bottom:0;
-            left:0;
-            width:100%;
-            background-color: rgba(10,10,10,0.7);
-            -webkit-filter: drop-shadow(0px 0px 15px #000) brightness(100%);
-            height:30;
-        }
-
-        .my-block {
-            width: 900px;
-            text-align: center;
-            font-family:my-font;
-            text-shadow: 0px 0px 4px #000;
-            color: white;
-            display: table-cell;
-            vertical-align: middle;
-            padding-top: 70px;
-            padding-left: 100px;
-            padding-right: 100px;
-            padding-bottom: 70px;
-            overflow: hidden;
-        height: 100%;
-        }
-
-        .thumbnails img {
-            padding: 1px;
-            margin: 0 2px 2px 0;
-            -webkit-filter: drop-shadow(0px 0px 5px #000) brightness(100%);
-            -webkit-transition: All 0.5s ease;
-            -moz-transition: All 0.5s ease;
-            -o-transition: All 0.5s ease;
-            -ms-transition: All 0.5s ease;
-            transition: All 0.5s ease;
-        }
-
-        .thumbnails img:hover {
-            -webkit-filter: drop-shadow(0px 0px 5px #000) brightness(150%);
-            cursor:pointer;
-        }
-
-        .preview img {
-            padding: 1px;
-            border: none;
-            outline: none;
-            background-size: 350px;
-            -webkit-filter: drop-shadow(0px 0px 5px #000);
-            -webkit-transition: background-image 0.5s ease;
-        }
-
-        .button {
-            width:64px;
-            height:64px;
-            box-shadow: 0px 0px 4px #000;
-            -webkit-transition: All 0.5s ease;
-            -moz-transition: All 0.5s ease;
-            -o-transition: All 0.5s ease;
-            -ms-transition: All 0.5s ease;
-            transition: All 0.5s ease;
-        }
-
-        .button:hover {
-            box-shadow: 0px 0px 10px #000;
-            -webkit-filter: brightness(150%);
-        }
-
-        .hlink {
-            font-family:header-font;
-            font-size: 30;
-            color: white;
-            text-decoration: none;
-            color: #808080;
-            text-shadow: 0px 0px 4px #000;
-            -webkit-transition: All 0.5s ease;
-            -moz-transition: All 0.5s ease;
-            -o-transition: All 0.5s ease;
-            -ms-transition: All 0.5s ease;
-            transition: All 0.5s ease;
-        }
-
-        .hlink:hover {
-            text-shadow: 0px 0px 10px #000;
-            color: #f5f5f5;
-        }
-
-        block-hidden {
-            display: none !important;
-        }
-
-        .left-block {
-            text-align: left !important;
-        }
-
-        .box150 {
-            width: 150px;
-        height: 150px;
-            position:relative;
-        }
-
-        #wrap {
-            width:500px;
-            margin:0 auto;
-        }
-
-        #left_col {
-            float:left;
-            width:150px;
-        }
-
-        #right_col {
-            float:right;
-            width:350px;
-            height: 150px;
-        }
-
-        #about-block::-webkit-scrollbar { width: 0 !important }
-        #example-block::-webkit-scrollbar { width: 0 !important }
-
-        a:link {
-        color: #CCCCCC;
-        -webkit-transition: All 0.5s ease;
-        text-decoration: none;
-        }
-
-        a:visited {
-        color: #CCCCCC;
-        -webkit-transition: All 0.5s ease;
-        text-decoration: none;
-        }
-
-        a:hover {
-        color: #FFFFFF;
-        -webkit-transition: All 0.5s ease;
-        text-decoration: none;
-        }
-
-        a:active {
-        color: #CCCCCC;
-        -webkit-transition: All 0.5s ease;
-        text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 
     <head>
         <title>Dmitry Morozov Online Portfolio</title>
@@ -203,33 +17,31 @@
 
     <body>
         <div class="header">
-            <a class="hlink" onclick='onclickabout()'>About</a>
-            <a style="margin-left: 155;" class="hlink" onclick='onclickexample()'>Showcase</a>
-            <a style="margin-left: 140;" class="hlink" onclick='onclickcontacts()'>Contacts</a>
+            <a class="header-menu-hlink" onclick='onclickabout()'>About</a>
+            <a style="margin-left: 155;" class="header-menu-hlink" onclick='onclickexample()'>Showcase</a>
+            <a style="margin-left: 140;" class="header-menu-hlink" onclick='onclickcontacts()'>Contacts</a>
         </div>
-        <div class="my-block">
-            <div id="about-block"  onscroll="drawGraphs(this)" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 4s ease;transition: All 4s ease;">
-                <div id="wrap">
-                    <div id="left_col">
-                        <img src="images/photo.png" height="150" width="150" style="-webkit-filter: drop-shadow(0px 0px 15px #000); filter: drop-shadow(0px 0px 15px #222);" >
+        <div class="main-block">
+            <div id="about-block"  onscroll="check_scroll_action(this)" class="content-block">
+                <div id="greetings-wrapper">
+                    <div id="greetings-left-col">
+                        <img src="images/photo.png" height="150" width="150" class="element-shadow-15">
                     </div>
-                    <div id="right_col" style="font-size: 35; display: table; text-align: center;">
+                    <div id="greetings-right-col">
                         <span style="display: table-cell;vertical-align: middle;">Hello <br/> My name is Dmitry</span>
                     </div>
                 </div>
-                <div>&nbsp;</div>
-                <br/>
 
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                <br/><br/>
+                <div class="full-size-text-block">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
 
                 <hr>
                 <p><b>EDUCATION</b></p>
                 <hr>
 
-                <div class="left-block">
+                <div class="left-text-block">
                     <dl>
                         <dt><p><b>School</b></p></dt>
                         <dd>- 344 Lyceum 2009 graduate</dd>
@@ -242,10 +54,11 @@
                     </dl>
                 </div>
 
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div class="full-size-text-block">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
 
-                <br/><br/>
                 <hr>
                 <p><b>WHAT I KNOW</b></p>
                 <hr>
@@ -253,36 +66,29 @@
                 <br/>
 
                 <div style="padding-bottom: 20px;height:180px;">
-                    <div style="height:150;width:33%;float:left"><canvas id="myChart1" width="150" height="150" style="padding-left: 30px;padding-right: 30px;"></canvas><br/><br/><p><b>Java</b></p></div>
-                    <div style="height:150;width:33%;float:left"><canvas id="myChart2" width="150" height="150" style="padding-left: 30px;padding-right: 30px;"></canvas><br/><br/><p><b>C/C++</b></p></div>
-                    <div style="height:150;width:33%;float:left"><canvas id="myChart3" width="150" height="150" style="padding-left: 30px;padding-right: 30px;"></canvas><br/><br/><p><b>HTML/CSS/Javascript</b></p></div>
+                    <div class="graph-widget"><canvas id="myChart1" width="150" height="150" style="padding-left: 30px;padding-right: 30px;"></canvas><br/><br/><p><b>Java</b></p></div>
+                    <div class="graph-widget"><canvas id="myChart2" width="150" height="150" style="padding-left: 30px;padding-right: 30px;"></canvas><br/><br/><p><b>C/C++</b></p></div>
+                    <div class="graph-widget"><canvas id="myChart3" width="150" height="150" style="padding-left: 30px;padding-right: 30px;"></canvas><br/><br/><p><b>HTML/CSS/Javascript</b></p></div>
                 </div>
 
-                <br>
+                <div class="full-size-text-block">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
 
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                <br/><br/><br/><br/>
-
-                <div style="padding-bottom: 20px;height:360px;">
-                    <div style="height:150;width:31%;float:left;padding:5px;">
-                        <img id="first_img" src="images/logo.png" style="-webkit-transition: All 2s ease;opacity:0.0">
-                        <!--<div style="font-family:font-symbols;font-size: 100;color: rgb(A0,A0,A0);text-shadow: 0px 0px 4px #000;"><b>I</b></div>--><br/>
+                <div style="padding-top:60px;padding-bottom: 40px;height: 390px;">
+                    <div class="three-col-block">
+                        <img id="first_img" src="images/logo.png" style="-webkit-transition: All 2s ease;opacity:0.0"><br/>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
-                    <div style="height:150;width:31%;float:left;padding:5px;">
-                        <img id="second_img" src="images/logo.png" style="-webkit-transition: All 2s ease;opacity:0.0">
-                        <!--<div style="font-family:font-symbols;font-size: 100;color: rgb(A0,A0,A0);text-shadow: 0px 0px 4px #000;"><b>C</b></div>--><br/>
+                    <div class="three-col-block">
+                        <img id="second_img" src="images/logo.png" style="-webkit-transition: All 2s ease;opacity:0.0"><br/>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
-                    <div style="height:150;width:31%;float:left;padding:5px;">
-                        <img id="third_img" src="images/logo.png" style="-webkit-transition: All 2s ease;opacity:0.0">
-                        <!--<div style="font-family:font-symbols;font-size: 100;color: rgb(A0,A0,A0);text-shadow: 0px 0px 4px #000;"><b>P</b></div>--><br/>
+                    <div class="three-col-block">
+                        <img id="third_img" src="images/logo.png" style="-webkit-transition: All 2s ease;opacity:0.0">><br/>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
                 </div>
-
-                <br/><br/>
 
                 <hr>
                 <p><b>EXPERIENCE</b></p>
@@ -294,45 +100,45 @@
                 <img src="images/logos/intel.png" width="150px" height="auto" style="padding-left: 30px;">
                 <img src="images/logos/lenovo.gif" width="150px" height="auto" style="padding-left: 30px;">
 
-                <br><br><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+                <div class="full-size-text-block">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
             </div>
-            <div id="contact-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s ease;transition: All 1s ease;">
+            <div id="contact-block" class="content-block">
                 Contact me through social media.<br/>
-                <a href="#"><img class="button" src="images/social/facebook.png"></a>
-                <a href="#"><img class="button" src="images/social/google.png"></a>
-                <a href="#"><img class="button" src="images/social/linkedin.png"></a>
+                <a href="#"><img class="img-social-button" src="images/social/facebook.png"></a>
+                <a href="#"><img class="img-social-button" src="images/social/google.png"></a>
+                <a href="#"><img class="img-social-button" src="images/social/linkedin.png"></a>
 
                 <br/>
                 Or leave a feedback:
-                <br/><br/><br/><br/><br/><br/>
+                <br/>
 
-                <div style="padding-top: 10px; padding-bottom: 20px;height:300px;">
-                    <div style="height:250;width:43%;float:left;padding:25px;">
+                <div style="padding-top: 10px; padding-top: 100px;padding-bottom: 20px;height:300px;">
+                    <div class="two-col-block">
                         <form action="URL to form script" method="POST">
-                            <input style="width: 100%;float: left;background-color: rgb(230,230,230);font-size: 20;border: none;box-shadow:none;text-indent:10px;line-height: 30px;" type="text" name="realname" placeholder="Name"><br><br>
-                            <input style="width: 100%;float: left;background-color: rgb(230,230,230);font-size: 20;border: none;box-shadow:none;text-indent:10px;line-height: 30px;" type="text" name="email" placeholder="Email"><br><br>
-                            <textarea style="width: 100%;float: left;background-color: rgb(230,230,230);font-size: 20;border: none;box-shadow:none;text-indent:7px;" name="comments" rows="5" placeholder="Message"></textarea><br><br>
-                            <input style="float: left;font-family: my-font;background-color: rgb(50,50,50);border:none;color: #ccc;padding: 8px 38px 12px 36px;margin: 0px;margin-top: 5px;" type="submit" value="Send">
+                            <input class="feedback-input-text" type="text" name="realname" placeholder="Name"><br><br>
+                            <input class="feedback-input-text" type="text" name="email" placeholder="Email"><br><br>
+                            <textarea class="feedback-input-textarea" name="comments" rows="5" placeholder="Message"></textarea><br><br>
+                            <input class="feedback-btn" type="submit" value="Send">
                         </form>
                     </div>
-                    <div style="height:150;width:43%;float:left;padding:25px;">
+                    <div class="two-col-block">
                         <b>Saint-Petersburg, Russia</b><br><br><br>
                         I am located in Saint-Petersburg, but am looking for work places all over the world. Thanks!
                     </div>
                 </div>
             </div>
 
-            <div id="example-block" style="overflow: hidden; display: none; opacity:0; -webkit-transition: All 1s ease;transition: All 1s ease;">
+            <div id="example-block" class="content-block">
 
-                <div style="padding-top: 10px; padding-bottom: 20px;height:300px;">
-                    <div style="height:150;width:48%;float:left;padding:5px;">
+                <div style="padding-top: 10px; padding-bottom: 60px;height:300px;">
+                    <div class="two-col-block">
                         <div style="font-family:font-symbols;font-size: 100;"><b>J</b></div><br/>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>
-                    <div style="height:150;width:48%;float:left;padding:5px;">
+                    <div class="two-col-block">
                         <div style="font-family:font-symbols;font-size: 100;"><b>S</b></div><br/>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </div>

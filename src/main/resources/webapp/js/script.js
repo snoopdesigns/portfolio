@@ -6,9 +6,9 @@ window.onload = function() {
 
 var prevHeight = 0;
 
-function drawGraphs(div) {
-//alert(div.scrollTop);
-    var graph1Data = [
+function check_scroll_action(div) {
+    if(div.scrollTop > 300 && prevHeight <= 300) {
+        var graph1Data = [
             {
                 value: 90,
                 color:"#666666"
@@ -54,34 +54,32 @@ function drawGraphs(div) {
             onAnimationComplete : null
         }
 
-        if(div.scrollTop > 300 && prevHeight <= 300) {
-            document.getElementById('myChart1').style.width = "150px";
-            document.getElementById('myChart1').style.height = "150px";
+        document.getElementById('myChart1').style.width = "150px";
+        document.getElementById('myChart1').style.height = "150px";
 
-            document.getElementById('myChart2').style.width = "150px";
-            document.getElementById('myChart2').style.height = "150px";
+        document.getElementById('myChart2').style.width = "150px";
+        document.getElementById('myChart2').style.height = "150px";
 
-            document.getElementById('myChart3').style.width = "150px";
-            document.getElementById('myChart3').style.height = "150px";
+        document.getElementById('myChart3').style.width = "150px";
+        document.getElementById('myChart3').style.height = "150px";
 
-            var myDoughnutChart1 = new Chart(document.getElementById("myChart1").getContext("2d")).Doughnut(graph1Data,options);
-            var myDoughnutChart2 = new Chart(document.getElementById("myChart2").getContext("2d")).Doughnut(graph2Data,options);
-            var myDoughnutChart3 = new Chart(document.getElementById("myChart3").getContext("2d")).Doughnut(graph3Data,options);
-        }
+        var myDoughnutChart1 = new Chart(document.getElementById("myChart1").getContext("2d")).Doughnut(graph1Data,options);
+        var myDoughnutChart2 = new Chart(document.getElementById("myChart2").getContext("2d")).Doughnut(graph2Data,options);
+        var myDoughnutChart3 = new Chart(document.getElementById("myChart3").getContext("2d")).Doughnut(graph3Data,options);
+    }
 
-        if(div.scrollTop > 700 && prevHeight <= 700) {
-            document.getElementById('first_img').style.opacity = "1.0";
-            setTimeout(function() {document.getElementById('second_img').style.opacity = "1.0";}, 200);
-            setTimeout(function() {document.getElementById('third_img').style.opacity = "1.0";}, 400);
-        }
+    if(div.scrollTop > 700 && prevHeight <= 700) {
+        document.getElementById('first_img').style.opacity = "1.0";
+        setTimeout(function() {document.getElementById('second_img').style.opacity = "1.0";}, 200);
+        setTimeout(function() {document.getElementById('third_img').style.opacity = "1.0";}, 400);
+    }
 
-        if(div.scrollTop <200 && prevHeight >= 200) {
-            document.getElementById('first_img').style.opacity = "0.0";
-            document.getElementById('second_img').style.opacity = "0.0";
-            document.getElementById('third_img').style.opacity = "0.0";
-        }
-
-        prevHeight = div.scrollTop;
+    if(div.scrollTop <200 && prevHeight >= 200) {
+        document.getElementById('first_img').style.opacity = "0.0";
+        document.getElementById('second_img').style.opacity = "0.0";
+        document.getElementById('third_img').style.opacity = "0.0";
+    }
+    prevHeight = div.scrollTop;
 }
 
 function onclickcontacts() {
