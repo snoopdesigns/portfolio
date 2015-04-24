@@ -9,12 +9,12 @@
         }
 
         @font-face {
-            font-family:font-symbols;
-            src: url(../fonts/cool-stuff.ttf);
+            font-family:serif-font;
+            src: url(../fonts/Timeless.ttf);
         }
 
         @font-face {
-            font-family:font-symbols-new;
+            font-family:font-symbols;
             src: url(../fonts/stmedia.otf);
         }
 
@@ -175,7 +175,8 @@
             float:right;
             width:350px;
             height: 150px;
-            font-size: 35px;
+            font-family: serif-font;
+            font-size: 40px;
             display: table;
             text-align: center;
         }
