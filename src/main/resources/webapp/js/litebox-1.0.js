@@ -127,7 +127,7 @@ Lightbox.prototype = {
 		for (var i=0; i<anchors.length; i++){
 			var anchor = anchors[i];
 			
-			var relAttribute = String(anchor.getAttribute('rel'));
+			var relAttribute = String(anchor.getAttribute('class'));
 			
 			// use the string.match() method to catch 'lightbox' references in the rel attribute
 			if (anchor.getAttribute('href') && (relAttribute.toLowerCase().match('lightbox'))){
@@ -255,7 +255,7 @@ Lightbox.prototype = {
 		var anchors = document.getElementsByTagName('a');
 
 		// if image is NOT part of a set..
-		if((imageLink.getAttribute('rel') == 'lightbox')){
+		if((imageLink.getAttribute('class') == 'lightbox')){
 			// add single image to imageArray
 			imageArray.push(new Array(imageLink.getAttribute('href'), imageLink.getAttribute('title')));			
 		} else {
@@ -264,7 +264,7 @@ Lightbox.prototype = {
 			// loop through anchors, find other images in set, and add them to imageArray
 			for (var i=0; i<anchors.length; i++){
 				var anchor = anchors[i];
-				if (anchor.getAttribute('href') && (anchor.getAttribute('rel') == imageLink.getAttribute('rel'))){
+				if (anchor.getAttribute('href') && (anchor.getAttribute('class') == imageLink.getAttribute('class'))){
 					imageArray.push(new Array(anchor.getAttribute('href'), anchor.getAttribute('title')));
 				}
 			}
